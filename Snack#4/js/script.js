@@ -11,6 +11,7 @@ var element = document.getElementById("invitati");
 for (var i = 0; i < 10; i++) {
     invited.push(humanGenerator());
 };
+invited.sort();
 console.log(invited);
 
 ulListStamp(invited, element);
