@@ -5,14 +5,17 @@
 // Stampa l'array nella console.
 var numberArray = [];
 
+alert("Ti chiederò di inserire 6 numeri");
+
 for (var i = 0; i < 6; i++) {
-    var question = parseInt(prompt("Dimmi un numero"));
+    var question = parseInt(prompt("Numero " + (i + 1) + ":"));
     if (isOdd(question)) {
         numberArray.push(question);
     };
 };
 
 console.log("I numeri dispari tra quelli indicati sono:", numberArray);
+alert("I numeri dispari tra quelli indicati sono: " + numberArray);
 
 // FUNCTION
 function isOdd (num) {
