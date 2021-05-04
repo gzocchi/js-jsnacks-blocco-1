@@ -10,15 +10,28 @@ var invited = [];
 var element = document.getElementById("invitati");
 
 // aggiungo 10 persone agli invitati
+// for (var i = 0; i < 10; i++) {
+//     invited.push(humanGenerator(nameGenerator(nameArray), surnameGenerator(surnameArray)));
+// };
+
+// aggiungo 10 nomi univoci agli invitati
 for (var i = 0; i < 10; i++) {
-    invited.push(humanGenerator(nameGenerator(nameArray), surnameGenerator(surnameArray)));
+    do {
+        console.log("giro:", i); // debug
+        var human = humanGenerator(nameGenerator(nameArray), surnameGenerator(surnameArray));
+        console.log(human); // debug
+        var newName = (invited.indexOf(human) == -1)
+        console.log(newName); // debug
+    } while (!newName);
+    invited.push(human);
 };
+
 invited.sort();
 console.log(invited);
 
 ulListStamp(invited, element);
 
-// FUNCTION
+// FUNCTIONS
 function casualNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
@@ -29,20 +42,20 @@ function nameGenerator (array) {
 
 function surnameGenerator (array) {
     return array[casualNumber(0, (array.length - 1))];
-}
+};
 
 function humanGenerator (name, surname) {
     var human = [];
     human.push(name);
     human.push(surname);
     return human.join(" ");
-}
+};
 
 function ulListStamp (arrayList, elementID) {
     for (var i = 0; i < arrayList.length; i++) {
         elementID.innerHTML += "<li>" + arrayList[i] + "</li>";
     };
-}
+};
 
 /*
 function humanGenerator () {
