@@ -4,22 +4,13 @@
 // generi una coppia nome-cognome casuale,
 // così da permettere al signor Gatsby di costruire una falsa lista di 10 invitati alla sua festa,
 // da stampare in pagina, utilizzando il tag adatto alle liste.
-
-var nameArray = ["Leonardo", "Francesco", "Lorenzo", "Alessandro", "Mattia", "Sofia", "Aurora", "Giulia", "Ginevra", "Alice"];
-var surnameArray = ["Rossi", "Ferrari", "Russo", "Bianchi", "Romano", "Gallo", "Costa", "Fontana"];
 var invited = [];
 
 // aggiungo la persona creata agli invitati
-invited.push(humanGenerator());
-invited.push(humanGenerator());
-invited.push(humanGenerator());
-invited.push(humanGenerator());
-invited.push(humanGenerator());
-invited.push(humanGenerator());
-invited.push(humanGenerator());
-invited.push(humanGenerator());
-invited.push(humanGenerator());
-invited.push(humanGenerator());
+for (var i = 0; i < 10; i++) {
+    invited.push(humanGenerator());
+}
+
 console.log(invited);
 
 
