@@ -9,29 +9,35 @@ var nameArray = ["Leonardo", "Francesco", "Lorenzo", "Alessandro", "Mattia", "So
 var surnameArray = ["Rossi", "Ferrari", "Russo", "Bianchi", "Romano", "Gallo", "Costa", "Fontana"];
 var invited = [];
 
-// Nuova persona da creare
-var human = []; 
-console.log("persona iniziale:", human);
-// Nome casuale
-var casualName = nameArray[casualNumber(0, (nameArray.length - 1))];
-human.push(casualName)
-console.log("Nome casuale:", casualName);
-console.log("persona_nome:", human);
-// Cognome casuale
-var casualSurame = surnameArray[casualNumber(0, (surnameArray.length - 1))];
-human.push(casualSurame);
-console.log("Cognome casuale:", casualSurame);
-console.log("persona_nome+cognome:", human);
-// Unisco la persona
-human = human.join(" ")
-console.log("Persona finale:", human);
-
 // aggiungo la persona creata agli invitati
-invited.push(human);
+invited.push(humanGenerator());
+invited.push(humanGenerator());
+invited.push(humanGenerator());
+invited.push(humanGenerator());
+invited.push(humanGenerator());
+invited.push(humanGenerator());
+invited.push(humanGenerator());
+invited.push(humanGenerator());
+invited.push(humanGenerator());
+invited.push(humanGenerator());
 console.log(invited);
 
 
 // FUNCTION
 function casualNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
+}
+
+function humanGenerator () {
+    var nameArray = ["Leonardo", "Francesco", "Lorenzo", "Alessandro", "Mattia", "Sofia", "Aurora", "Giulia", "Ginevra", "Alice"];
+    var surnameArray = ["Rossi", "Ferrari", "Russo", "Bianchi", "Romano", "Gallo", "Costa", "Fontana"];
+    var human = [];
+
+    var casualName = nameArray[casualNumber(0, (nameArray.length - 1))];
+    human.push(casualName);
+
+    var casualSurame = surnameArray[casualNumber(0, (surnameArray.length - 1))];
+    human.push(casualSurame);
+
+    return human.join(" ");
+};
