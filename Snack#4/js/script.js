@@ -5,14 +5,15 @@
 // così da permettere al signor Gatsby di costruire una falsa lista di 10 invitati alla sua festa,
 // da stampare in pagina, utilizzando il tag adatto alle liste.
 var invited = [];
+var element = document.getElementById("invitati");
 
-// aggiungo la persona creata agli invitati
+// aggiungo 10 persone agli invitati
 for (var i = 0; i < 10; i++) {
     invited.push(humanGenerator());
-}
-
+};
 console.log(invited);
 
+ulListStamp(invited, element);
 
 // FUNCTION
 function casualNumber(min, max) {
@@ -32,3 +33,9 @@ function humanGenerator () {
 
     return human.join(" ");
 };
+
+function ulListStamp (arrayList, elementID) {
+    for (var i = 0; i < arrayList.length; i++) {
+        elementID.innerHTML += "<li>" + arrayList[i] + "</li>";
+    };
+}
